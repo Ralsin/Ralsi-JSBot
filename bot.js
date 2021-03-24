@@ -9,10 +9,10 @@ let bugnanas = new Map();
 
 const sql = require('mysql2').createPool({
     connectionLimit: 4,
-    host: 'remotemysql.com',
-    user: 'rFdnxu0lfi',
+    host: process.env.sqlHost,
+    user: process.env.sqldb,
     password: process.env.pass,
-    database: 'rFdnxu0lfi'
+    database: process.env.sqldb
 });
 
 const prefix = '>';

@@ -8,7 +8,7 @@ module.exports = {
             new MessageEmbed()
             .setColor('ffaaff')
             .setDescription(`<@!${message.author.id}> hugs <@!${message.mentions.users.first().id}>!`)
-            .setImage(`https://raw.githubusercontent.com/Ralsin/JSBot/main/rp/hug/furry/${pic}`)
+            .setImage(`https://raw.githubusercontent.com/Ralsin/Ralsi-JSBot/main/rp/hug/furry/${pic}`)
         )
     }
 }

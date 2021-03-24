@@ -11,10 +11,10 @@ module.exports = {
         if(message.mentions.users.first() && !message.mentions.users.first().bot){
             var user = message.mentions.users.first();
             let userStatus = user.presence.status;
-            if(userStatus == 'online'){userStatus = '<:online:820681020139372544> Online'}
-            if(userStatus == 'idle'){userStatus = '<:idle:820681020172009482> Idle'}
-            if(userStatus == 'dnd'){userStatus = '<:dnd:820681020110012518> Do Not Disturb'}
-            if(userStatus == 'offline'){userStatus = '<:offline:820681019845509122> Offline'}
+            if(userStatus == 'online'){userStatus = '<:online:824298961060757555> Online'}
+            if(userStatus == 'idle'){userStatus = '<:idle:824298960734650389> Idle'}
+            if(userStatus == 'dnd'){userStatus = '<:dnd:824298961129046086> Do Not Disturb'}
+            if(userStatus == 'offline'){userStatus = '<:offline:824298961195630622> Offline'}
             sql.query(`SELECT * FROM info WHERE UserID=${user.id}`, function(err, results, fields){
                 if(results[0] != undefined){UserInfo = results[0].infoText} else {UserInfo = '>set info [text]'}
                 const embed = new MessageEmbed()
@@ -39,7 +39,7 @@ module.exports = {
             .addField('**Owner:**', `<@!${message.guild.owner.id}>`)
             .addField(`Roles: 10/${message.guild.roles.cache.size}`, message.guild.roles.cache.filter(roles => roles.name != '@everyone').sort((a, b) => b.position - a.position).first(10).join('\n'))
             .addField('**Region:**', message.guild.region.toUpperCase())
-            .addField('**Members:**', `<:users:818842653855580160> Users: ${message.guild.members.cache.filter(member => !member.user.bot).size}\n<:bot:819268208447848509> Bots: ${message.guild.members.cache.filter(member => member.user.bot).size}`)
+            .addField('**Members:**', `<:users:824298961103880203> Users: ${message.guild.members.cache.filter(member => !member.user.bot).size}\n<:bot:824298961191698472> Bots: ${message.guild.members.cache.filter(member => member.user.bot).size}`)
             return message.reply(embed)
         } else
         if(args[0] == 'me'){
