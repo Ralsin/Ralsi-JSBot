@@ -3,7 +3,6 @@ module.exports = {
     execute(message, MessageEmbed, fs){
         const files = fs.readdirSync('./rp/hug/furry');
         const pic = files[Math.floor(Math.random() * files.length)]
-        console.log(files, pic)
         message.reply(
             new MessageEmbed()
             .setColor('ffaaff')
