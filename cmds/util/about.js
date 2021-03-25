@@ -1,6 +1,7 @@
+const sql = require('../bot/ralsi').db;
 module.exports = {
     name: 'about',
-    execute(message, args, MessageEmbed, sql, bot){
+    execute(message, args, MessageEmbed){
         if(!args[0]){
             const embed = new MessageEmbed()
             .setColor('555555')

@@ -1,6 +1,7 @@
+const sql = require('../bot/ralsi').db;
 module.exports = {
     name: 'onMessage',
-    execute(message, sql, said, bot, MessageEmbed, bugnanas){
+    execute(message, said, bot, MessageEmbed, bugnanas){
         if(!said.has(`${message.guild.id}-${message.author.id}`)){
             sql.query(`SELECT * FROM levelling WHERE laeGuildID=${message.guild.id} AND laeUserID=${message.author.id}`, function(err, results){
                 if(results==''){sql.query(`INSERT INTO levelling(laeGuildID, laeUserID, laeXP, laeMoney) VALUES (${message.guild.id}, ${message.author.id}, 0, 0)`)}
