@@ -1,4 +1,4 @@
-const sql = require('../bot/ralsi').db;
+const sql = require('./ralsi').db;
 module.exports = {
     name: 'onMessage',
     execute(message, said, bot, MessageEmbed, bugnanas){

@@ -1,6 +1,7 @@
 module.exports = {
     name: 'kick',
-    execute(message, args, Discord){
+    desc: 'Kicks out mentioned member.',
+    execute(message){
         const mmbr = message.mentions.users.first();
         if (!message.member.permissions.has('KICK_MEMBERS')) return message.channel.send('You dont have enough permissions.')
         if (!mmbr) return message.channel.send('Mention a user!');

@@ -1,5 +1,6 @@
 module.exports = {
     name: 'color',
+    desc: 'Gives a color role.',
     async execute(message, args, MessageEmbed){
         if(!message.guild.members.cache.get('793504895738314782').permissions.has('MANAGE_ROLES')){return message.reply('I don\'t have enough permissions ;w;')}
         if(!args[0]){

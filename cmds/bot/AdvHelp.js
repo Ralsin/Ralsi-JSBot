@@ -1,17 +1,15 @@
 module.exports = {
-    name: 'Advanced Help',
-    desc: 'Brand new, Advanced Help! (bruhhh).',
+    name: 'help',
     execute(message, MessageEmbed, bot){
-        const bl = []
-        const sets = new Set();
-        bot.commands.forEach((cmd) => {sets.add(`${cmd.name}\n*${cmd.desc}*`)});
-        const description = Array.from(sets).filter(() => !bl)
+        const description = new Array();
+        bot.commands.forEach((cmd) => {if(cmd.desc){description.push(`\`>${cmd.name}\` - *${cmd.desc}*`)}});
         message.reply(
             new MessageEmbed()
             .setColor('c0ff00')
-            .setTitle(this.desc)
-            .setDescription(description)
+            .setTitle('Help (Command list.)')
+            .setDescription(description.sort())
+            .setFooter('Type ">help rp" to see RP commands. (wip)')
         )
-        console.log(description)
     }
 }
+

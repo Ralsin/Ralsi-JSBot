@@ -3,8 +3,7 @@ module.exports = {
     execute(command, bot, message, MessageEmbed, args, fs){
         if(command === 'help'){
             if(args[0]=='rp'){return bot.commands.get('rphelp').execute(message, MessageEmbed)}
-            if(args[0]=='adv'){return bot.commands.get('Advanced Help').execute(message, MessageEmbed, bot)}
-            return bot.commands.get('help').execute(message, MessageEmbed)
+            return bot.commands.get('help').execute(message, MessageEmbed, bot)
         }
         if(command === 'avatar'){return bot.commands.get('avatar').execute(message, MessageEmbed)}
         if(command === 'emoji'){return bot.commands.get('emoji').execute(message, args, bot)}
