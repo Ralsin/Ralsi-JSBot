@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require("discord.js");
 const fs = require('fs');
+require('./cmds/bot/inlineReply.js')
 const bot = new Discord.Client();
 require('dotenv').config();
 const prefix = '>';
