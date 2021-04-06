@@ -4,8 +4,7 @@ const fs = require('fs');
 const bot = new Discord.Client();
 require('dotenv').config();
 const prefix = '>';
-let said = new Map();
-let bugnanas = new Map();
+let said = new Map(); let bugnanas = new Map();
 
 bot.commands = new Discord.Collection();
 const load_dir = (dirs) => {
@@ -26,9 +25,9 @@ bot.on('message', message => {
     if(message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    if(command === 'cmd'){if(message.author.id == '704037343878971424'){return eval(message.content.slice(5, 999)), setTimeout(() => {message.react('<:paw:800419421406756894>')}, 500)}}
-    bot.commands.get('onMessage').execute(message, said, bot, MessageEmbed, bugnanas)
+    if(command === 'cmd'){if(message.author.id == '704037343878971424' || message.author.id == '433599597944897536'){try {return eval(message.content.slice(5, 999)), message.react('<:paw:800419421406756894>')} catch (error) {message.channel.send(`\`\`\`${error}\`\`\``)}}}
+    try {bot.commands.get('onMessage').execute(message, said, bot, MessageEmbed, bugnanas)} catch(error) {message.channel.send(`\`\`\`${error}\`\`\``)}
     if(!message.content.startsWith(prefix)) return;
-    bot.commands.get('cmds').execute(command, bot, message, MessageEmbed, args, fs)
+    try {bot.commands.get('cmds').execute(command, bot, message, MessageEmbed, args, fs)} catch(error) {message.channel.send(`\`\`\`${error}\`\`\``)}
 })
 bot.login(process.env.token)

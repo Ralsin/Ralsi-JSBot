@@ -20,7 +20,7 @@ module.exports = {
             )
             .addField('Platform: ', `${bot_platform} ${os.arch()}`, true)
             .addField('API: ', `discord.js ${JSON.parse(require('fs').readFileSync('package.json')).dependencies['discord.js'].replace('^', 'v')}`, true)
-            .addField('Total commands:', bot.commands.size - 10)
+            .addField('Total commands:', bot.commands.size - 11)
             .setFooter(`Author: ${bot.users.cache.get('704037343878971424').tag}`, bot.users.cache.get('704037343878971424').avatarURL())
         )
     }

@@ -1,5 +1,6 @@
 module.exports = {
     name: 'clear',
+    desc: 'Clear messages. Max 100.',
     async execute(message, args){
         if(!message.member.permissions.has('MANAGE_MESSAGES')){message.reply('You dont have the permissions to do that.')}
         if(message.member.permissions.has('MANAGE_MESSAGES')){

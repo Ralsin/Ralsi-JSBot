@@ -1,6 +1,7 @@
+const sql = require('../bot/ralsi').db;
 module.exports = {
     name: 'xp',
-    execute(message, sql, MessageEmbed){
+    execute(message, MessageEmbed){
         const guildID = message.guild.id;
         const authorID = message.author.id;
         sql.query(`SELECT * FROM levelling WHERE laeGuildID=${guildID} AND laeUserID=${authorID}`, function(results, fields){

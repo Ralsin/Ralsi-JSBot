@@ -1,4 +1,4 @@
-const sql = require('../bot/ralsi').db;
+const sql = require('./ralsi').db;
 module.exports = {
     name: 'onMessage',
     execute(message, said, bot, MessageEmbed, bugnanas){
@@ -36,6 +36,6 @@ module.exports = {
             setTimeout(() => {bugnanas.delete(`${message.guild.id}-${message.author.id}`)}, 3600000);
             message.react('800419421406756894')
         }
-        if(message.content == '<@!793504895738314782>' || message.content == '<@&822835489152172033>'){bot.commands.get('abot').execute(message, MessageEmbed, bot)}    
+        if(message.content == `<@!${bot.user.id}>` || message.content == `<@${bot.user.id}>` || message.content == '<@&822835489152172033>'){bot.commands.get('abot').execute(message, MessageEmbed, bot)}    
     }
 }

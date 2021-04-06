@@ -3,12 +3,13 @@ module.exports = {
     execute(command, bot, message, MessageEmbed, args, fs){
         if(command === 'help'){
             if(args[0]=='rp'){return bot.commands.get('rphelp').execute(message, MessageEmbed)}
-            return bot.commands.get('help').execute(message, MessageEmbed)
+            return bot.commands.get('help').execute(message, MessageEmbed, bot)
         }
         if(command === 'avatar'){return bot.commands.get('avatar').execute(message, MessageEmbed)}
         if(command === 'emoji'){return bot.commands.get('emoji').execute(message, args, bot)}
         if(command === 'emojis'){return bot.commands.get('emojis').execute(message, MessageEmbed, bot)}
         if(command === 'color'){return bot.commands.get('color').execute(message, args, MessageEmbed)}
+        if(command === 'hex'){return bot.commands.get('hex').execute(message, MessageEmbed)}
 
         if(command === 'kick'){return bot.commands.get('kick').execute(message)}
         if(command === 'ban'){return bot.commands.get('ban').execute(message)}

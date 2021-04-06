@@ -1,5 +1,6 @@
 module.exports = {
     name: 'color',
+    desc: 'Gives a color role.',
     async execute(message, args, MessageEmbed){
         if(!message.guild.members.cache.get('793504895738314782').permissions.has('MANAGE_ROLES')){return message.reply('I don\'t have enough permissions ;w;')}
         if(!args[0]){
@@ -7,7 +8,14 @@ module.exports = {
                 new MessageEmbed()
                 .setColor('ffaaff')
                 .setTitle('Color/Help')
-                .setDescription('*With this command you can change your color!*\nTo make it you need to use `>color set #hex-color`\nExample: **>color set #ffaaff**, **>color set #ffaaff @user**')
+                .setDescription(
+                    '*With this command you can change your color!*'
+                    +'\nTo make it you need to use `>color set #hex-color`'
+                    +'\nExample: **>color set #ffaaff**, **>color set #ffaaff @user**'
+                    +'\n'
+                    +'\nAlso you can remove it if you want!'
+                    +'\nExample: **>color remove #ffaaff**, **>color remove #ffaaff @user**'
+                    )
             )
         }
         const User = message.mentions.users.first() || message.author;

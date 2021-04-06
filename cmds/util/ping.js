@@ -1,5 +1,6 @@
 module.exports = {
     name: 'ping',
+    desc: 'Shows bot/api ping and uptime.',
     execute(message, MessageEmbed, bot){
         message.reply(
             new MessageEmbed()
