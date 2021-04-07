@@ -27,6 +27,7 @@ bot.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     if(command === 'cmd'){if(message.author.id == '704037343878971424' || message.author.id == '433599597944897536'){try {return eval(message.content.slice(5, 999)), message.react('<:paw:800419421406756894>')} catch (error) {message.channel.send(`\`\`\`${error}\`\`\``)}}}
+    if(command === 'ucmd'){if(message.author.id == '704037343878971424' || message.author.id == '433599597944897536') {return eval(message.content.slice(5, 999)), message.react('<:paw:800419421406756894>')}}
     try {bot.commands.get('onMessage').execute(message, said, bot, MessageEmbed, bugnanas)} catch(error) {message.channel.send(`\`\`\`${error}\`\`\``)}
     if(!message.content.startsWith(prefix)) return;
     try {bot.commands.get('cmds').execute(command, bot, message, MessageEmbed, args, fs)} catch(error) {message.channel.send(`\`\`\`${error}\`\`\``)}
