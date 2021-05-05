@@ -32,4 +32,5 @@ bot.on('message', message => {
     if(!message.content.startsWith(prefix)) return;
     try {bot.commands.get('cmds').execute(command, bot, message, MessageEmbed, args, fs)} catch(error) {message.channel.send(`\`\`\`${error}\`\`\``)}
 })
+bot.on('guildMemberAdd', member =>{try{bot.commands.get('onGMA').execute(member)}catch(error){console.log(error)}})
 bot.login(process.env.token)
