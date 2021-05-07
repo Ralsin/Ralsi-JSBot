@@ -1,6 +1,6 @@
 module.exports = {
     name: 'clear',
-    desc: 'Clear messages. Max 100.',
+    desc: 'Clears messages. Max 100.',
     async execute(message, args){
       if(!message.guild.members.cache.get('793504895738314782').permissions.has('MANAGE_MESSAGES')){return message.reply('I don\'t have enough permissions ;w;')}
         if(!message.member.permissions.has('MANAGE_MESSAGES')){message.reply('You dont have the permissions to do that.')}

@@ -18,3 +18,4 @@ module.exports = {
         )
     }
 }
+//Thanks to DevilFireFox#8685 for code
