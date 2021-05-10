@@ -38,5 +38,6 @@ module.exports = {
             message.react('800419421406756894')
         }
         if(message.content == `<@!${bot.user.id}>` || message.content == `<@${bot.user.id}>` || message.content == '<@&822835489152172033>'){bot.commands.get('abot').execute(message, MessageEmbed, bot)}    
-    }
+		if(message.content == 'beep'){message.channel.send('boop!')}
+	}
 }

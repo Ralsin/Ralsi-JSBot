@@ -13,7 +13,7 @@ module.exports = {
             new MessageEmbed()
             .setColor('c0ff00')
             .setTitle('About **bot**')
-            .setDescription(`Bot pfp by ${bot.users.cache.get('345874950965690379').tag}`)
+            .setDescription(`Bot pfp by FaxeL#6465`)
             .addField('Prefix: ', '` > `', true)
             .addField(
                 'Memory:',

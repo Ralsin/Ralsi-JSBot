@@ -18,7 +18,7 @@ const load_dir = (dirs) => {
 ['bot', 'fun', 'rp', 'util'].forEach(e => load_dir(e))
 
 bot.once('ready', () => {
-    console.log('Author:\n Ralsin#9199\n  uwu');
+    console.log('Author:\n Ralsi#9199\n  uwu');
     bot.user.setActivity(`">help" on ${bot.guilds.cache.size} servers!`, {type: 'LISTENING'});
     new Discord.WebhookClient('800408005958697000', process.env.webhookURL).send('Bot is online!')
 })
